@@ -1,5 +1,6 @@
 package com.scott.lee.user.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.scott.lee.base.BaseEntity;
 import org.hibernate.validator.constraints.NotEmpty;
 

@@ -1,4 +1,4 @@
-package com.scott.lee.config;
+package com.scott.lee.config.shiroConfig;
 
 import com.scott.lee.user.UserRepository;
 import com.scott.lee.user.entity.Role;

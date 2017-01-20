@@ -9,7 +9,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
 @ComponentScan({"com.scott.lee"})
-@EnableJpaRepositories(basePackages = "com.scott.lee.**.repository",
+@EnableJpaRepositories(basePackages = "com.scott.lee",
 		repositoryBaseClass = GenericJpaRepositoryImpl.class,
 		repositoryFactoryBeanClass = GenericJpaRepositoryFactoryBean.class)
 public class DashBoardMgmtApplication {
