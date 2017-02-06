@@ -1,8 +1,8 @@
 package com.scott.lee.config.shiroConfig;
 
-import com.scott.lee.user.UserRepository;
-import com.scott.lee.user.entity.Role;
-import com.scott.lee.user.entity.User;
+import com.scott.lee.user.reponsitory.UserRepository;
+import com.scott.lee.user.reponsitory.entity.Role;
+import com.scott.lee.user.reponsitory.entity.User;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 import org.apache.shiro.authc.*;

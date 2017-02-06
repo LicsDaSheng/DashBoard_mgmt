@@ -1,4 +1,4 @@
-package com.scott.lee.user.entity;
+package com.scott.lee.user.reponsitory.entity;
 
 import com.scott.lee.base.BaseEntity;
 

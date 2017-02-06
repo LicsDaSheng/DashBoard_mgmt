@@ -1,8 +1,10 @@
-package com.scott.lee.user;
+package com.scott.lee.user.controller;
 
 import com.scott.lee.base.JSONResult;
-import com.scott.lee.user.entity.User;
+import com.scott.lee.user.reponsitory.entity.User;
+import com.scott.lee.user.reponsitory.UserRepository;
 import io.swagger.annotations.Api;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.subject.Subject;
@@ -95,5 +97,22 @@ public class LoginController {
     JSONResult logout(){
         SecurityUtils.getSubject().logout();
         return new JSONResult("您已安全退出");
+    }
+
+
+    @RequestMapping(value="/getCurrentUser",method=RequestMethod.GET)
+    public @ResponseBody
+    JSONResult<User> getCurrentUser(){
+        String userName = (String)SecurityUtils.getSubject().getPrincipal();
+        JSONResult<User> result = new JSONResult<>();
+
+        if(StringUtils.isEmpty(userName)){
+            result.setSuccess(false);
+            result.setMessage("用户未登陆");
+            return result;
+        }
+
+        result.setData(userRepository.findByUsername(userName));
+        return result;
     }
 }

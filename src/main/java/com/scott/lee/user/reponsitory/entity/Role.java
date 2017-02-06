@@ -1,6 +1,5 @@
-package com.scott.lee.user.entity;
+package com.scott.lee.user.reponsitory.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.scott.lee.base.BaseEntity;
 
 import javax.persistence.*;
@@ -32,7 +31,6 @@ public class Role extends BaseEntity{
      * 角色用户
      * 一个角色对应多个用户
      */
-    @JsonIgnore
     @ManyToMany
     @JoinTable(name = "t_user_role", joinColumns = { @JoinColumn(name = "role_id") }, inverseJoinColumns = {
             @JoinColumn(name = "user_id") })

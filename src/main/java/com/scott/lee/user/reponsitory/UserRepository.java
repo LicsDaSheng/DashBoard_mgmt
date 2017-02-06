@@ -1,7 +1,9 @@
-package com.scott.lee.user;
+package com.scott.lee.user.reponsitory;
 
-import com.scott.lee.user.entity.User;
+import com.scott.lee.user.reponsitory.entity.User;
 import com.slyak.spring.jpa.GenericJpaRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -11,4 +13,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserRepository extends GenericJpaRepository<User,String> {
     User findByUsername(String username);
+
+    Page<User> findByUsernameContains(String userName,Pageable pageable);
 }

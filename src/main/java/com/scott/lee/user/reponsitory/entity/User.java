@@ -1,4 +1,4 @@
-package com.scott.lee.user.entity;
+package com.scott.lee.user.reponsitory.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.scott.lee.base.BaseEntity;
@@ -24,9 +24,25 @@ public class User extends BaseEntity{
     private String username;
 
     /**
+     * 昵称
+     */
+    private String nickName;
+
+
+    /**
+     * 邮箱
+     */
+    private String email;
+
+
+    /**
+     * QQ
+     */
+    private String qq;
+
+    /**
      * 密码
      */
-    @NotEmpty(message = "密码不能为空")
     private String password;
 
 
@@ -52,6 +68,7 @@ public class User extends BaseEntity{
 
 
     @Transient
+    @JsonIgnore
     public Set<String> getRolesName() {
         List<Role> roles = getRoleList();
         Set<String> set = new HashSet<String>();
@@ -84,5 +101,29 @@ public class User extends BaseEntity{
 
     public void setRoleList(List<Role> roleList) {
         this.roleList = roleList;
+    }
+
+    public String getNickName() {
+        return nickName;
+    }
+
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getQq() {
+        return qq;
+    }
+
+    public void setQq(String qq) {
+        this.qq = qq;
     }
 }

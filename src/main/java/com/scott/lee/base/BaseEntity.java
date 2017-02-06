@@ -40,7 +40,7 @@ public abstract class BaseEntity<PK extends Serializable>{
      * 创建人ID
      */
     @Column(name="creator_id")
-    private Long creatorId;
+    private String creatorId;
 
     /**
      * 创建人名称
@@ -72,11 +72,11 @@ public abstract class BaseEntity<PK extends Serializable>{
         this.updateTime = updateTime;
     }
 
-    public Long getCreatorId() {
+    public String getCreatorId() {
         return creatorId;
     }
 
-    public void setCreatorId(Long creatorId) {
+    public void setCreatorId(String creatorId) {
         this.creatorId = creatorId;
     }
 
